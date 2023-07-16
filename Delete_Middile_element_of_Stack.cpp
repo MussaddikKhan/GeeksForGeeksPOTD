@@ -15,7 +15,7 @@ class Solution
         s.pop(); 
 
         deleteMid(s, sizeOfStack);
-        // BackTrack -> again push popped element in stack while 
+        // BackTrack -> again push popped element in stack while returning. 
         s.push(x);
     }
 };
