@@ -28,7 +28,7 @@ class Solution
 
 // Iterative Code :
   
- class Solution
+class Solution
 {
     public:
    
@@ -39,17 +39,24 @@ class Solution
         node * curr = head; 
         node * prev = NULL; 
         node * forward = NULL;
-        int cnt = 0; 
-        while(curr and cnt < k){
+        node * fHead = NULL; 
+        node * temp = NULL; 
+        while(head){
+        int cnt = 0;
+            while(curr and cnt < k){
             forward = curr -> next; 
             curr -> next = prev; 
             prev = curr; 
             curr =forward; 
             cnt++; 
+         }
+         if(fHead==NULL)fHead = prev; 
+         if(temp)temp -> next = prev; 
+         temp = head; 
+         prev = NULL; 
+         head = curr; 
         }
-        head -> next = reverse(curr,k);
-        return prev; 
+        return fHead; 
     }
 };
-
 //TC :- O(N) , SC :- O(1); 
