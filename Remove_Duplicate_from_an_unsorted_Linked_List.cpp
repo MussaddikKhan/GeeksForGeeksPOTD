@@ -8,7 +8,7 @@ class Solution
     Node * removeDuplicates( Node *head) 
     {
      // your code goes here
-      map<int,int>mm; 
+      unordered_map<int,int>mm; 
       Node * curr = head; 
       Node * prev = head; 
       
